@@ -1,76 +1,41 @@
 export default function Projects() {
+  const fotos = [
+    "/proyectos/foto1.jpeg",
+    "/proyectos/foto2.jpeg",
+    "/proyectos/foto3.jpeg",
+    "/proyectos/foto4.jpeg",
+    "/proyectos/foto5.jpeg",
+    "/proyectos/foto6.jpeg",
+    "/proyectos/foto7.jpeg",
+  ];
+
   return (
     <section
       id="proyectos"
       className="py-32 px-8 bg-white text-black border-t border-gray-200"
     >
-
       <div className="max-w-6xl mx-auto">
 
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
           Nuestros Proyectos
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
-
-          {/* Proyecto 1 */}
-          <div className="overflow-hidden rounded-2xl shadow-lg bg-white">
-            <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop"
-              className="h-64 w-full object-cover"
-            />
-
-            <div className="p-6">
-              <h3 className="text-xl font-bold">
-                Reformas generales
-              </h3>
-
-              <p className="text-gray-600">
-                Trabajos de reforma y renovación en viviendas y locales.
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {fotos.map((foto, index) => (
+            <div
+              key={index}
+              className="overflow-hidden rounded-2xl shadow-lg"
+            >
+              <img
+                src={foto}
+                alt={`Proyecto ${index + 1}`}
+                className="w-full h-80 object-cover hover:scale-105 transition duration-500"
+              />
             </div>
-          </div>
-
-          {/* Proyecto 2 */}
-          <div className="overflow-hidden rounded-2xl shadow-lg bg-white">
-            <img
-              src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2070&auto=format&fit=crop"
-              className="h-64 w-full object-cover"
-            />
-
-            <div className="p-6">
-              <h3 className="text-xl font-bold">
-                Construcción y obra
-              </h3>
-
-              <p className="text-gray-600">
-                Obras realizadas con materiales de calidad y acabados profesionales.
-              </p>
-            </div>
-          </div>
-
-          {/* Proyecto 3 */}
-          <div className="overflow-hidden rounded-2xl shadow-lg bg-white">
-            <img
-              src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=2070&auto=format&fit=crop"
-              className="h-64 w-full object-cover"
-            />
-
-            <div className="p-6">
-              <h3 className="text-xl font-bold">
-                Trabajos exteriores
-              </h3>
-
-              <p className="text-gray-600">
-                Reformas exteriores y mejoras estructurales adaptadas a cada proyecto.
-              </p>
-            </div>
-          </div>
-
+          ))}
         </div>
 
       </div>
-
     </section>
   );
 }
